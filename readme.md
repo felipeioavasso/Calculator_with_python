@@ -6,3 +6,7 @@ This folder has 3 calculators: Two are in CMD and one has graphic interface.
   
   Calculator with graphic interface:
   - calculator_gi
+
+
+https://github.com/felipeioavasso/Calculator_with_python/assets/83762695/308a5486-f191-4ebf-9af4-967c36980d17
+
