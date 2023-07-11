@@ -1,21 +1,7 @@
 import msvcrt
+import operacoes
 from colorama import Fore, Style
 
-# Funções das operações matemáticas
-def soma(a, b):
-    return a + b
-
-def subtracao(a, b):
-    return a - b
-
-def multiplicacao(a, b):
-    return a * b
-
-def divisao(a, b):
-    if b != 0:
-        return a / b
-    else:
-        return "Erro: Divisão por zero." 
 
 #limpar a tela do terminal
 def clear_screen():
@@ -23,7 +9,6 @@ def clear_screen():
 
 def print_menu(options, selected_option):
     clear_screen()
-    print("Escolha a operação matemática:\n")
     for i, option in enumerate(options):
         if i == selected_option:
             print(f"{Fore.GREEN}>>> {option}{Style.RESET_ALL}")
@@ -33,11 +18,10 @@ def print_menu(options, selected_option):
 def menu():
     options = ["Soma", "Subtração", "multiplicação", "Divisão", "Sair"]
     selected_option = 0
-    
+
     while True:
-         
         print_menu(options, selected_option)
-           
+
         key = msvcrt.getch()
 
         if key == b'\xe0': # tecla especial (setas direcionais)
@@ -62,7 +46,7 @@ def menu():
                 b = float(input("Digite o segundo número: "))
                 
                 if selected_option == 0:
-                    resultado = soma(a, b)
+                    resultado = operacoes.soma(a, b)
                     print()
                     print(f"Resultado: {a} + {b} = {resultado}\n")
                     print()
@@ -70,7 +54,7 @@ def menu():
                     print()
                     
                 elif selected_option == 1:
-                    resultado = subtracao(a, b)
+                    resultado = operacoes.subtracao(a, b)
                     print()
                     print(f"Resultado: {a} - {b} = {resultado}\n")
                     print()
@@ -78,7 +62,7 @@ def menu():
                     print()
 
                 elif selected_option == 2:
-                    resultado = multiplicacao(a, b)
+                    resultado = operacoes.multiplicacao(a, b)
                     print()
                     print(f"Resultado: {a} * {b} = {resultado}\n")
                     print()
@@ -86,7 +70,7 @@ def menu():
                     print()
 
                 elif selected_option  == 3:
-                    resultado = divisao(a, b)
+                    resultado = operacoes.divisao(a, b)
                     print()
                     print(f"Resultado: {a} / {b} = {resultado}\n")
                     print()
